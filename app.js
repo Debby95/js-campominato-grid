@@ -11,17 +11,22 @@ function createGrid(xCells, yCells) {
     gridContainer.style.width = `calc(50px * ${xCells})`; 
 
     //+ le singole celle
-    for(let i = 0; i < cellsNumber; i++) {
-        const numbers = (1);
+    for(let i = 1; i <= cellsNumber; i++) {
+        
         //+ div che rappresenta la singola cella
         const cell = document.createElement("div");
         //+ cella
         cell.classList.add("cell");
-        cell.innerHTML = `<div>${numbers}</div>`
+        cell.textContent = i;
+
+        cell.addEventListener("click", function() {
+            this.classList.add("blue");
+            console.log();
+        })
+        
         //+ celle al grid container
         gridContainer.append(cell);
     }
-
 }   
 
 createGrid(10, 10);
